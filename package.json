@@ -1,9 +1,9 @@
 {
-  "name": "noir-starter",
+  "name": "zkcreditscore",
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-  "description": "A template repository to get started with writing zero knowledge programs with Noir.",
+  "description": "On chain credit score using ZK proofs",
   "scripts": {
     "dev": "hardhat compile && yarn deploy && vite",
     "build": "hardhat compile && yarn deploy && vite build",
