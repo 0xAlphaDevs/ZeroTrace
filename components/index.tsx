@@ -127,7 +127,7 @@ function Component() {
 
   return (
     <div className="container">
-      <h1>Example starter</h1>
+      <h1 className="text-3xl font-bold underline">Example starter</h1>
       <h2>This circuit checks that x and y are different</h2>
       <p>Try it!</p>
       <input name="x" type={'number'} onChange={handleChange} value={input.x} />
