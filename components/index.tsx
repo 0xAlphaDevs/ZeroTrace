@@ -14,10 +14,10 @@ import { Noir } from '@noir-lang/noir_js';
 import { BarretenbergBackend, flattenPublicInputs } from '@noir-lang/backend_barretenberg';
 import { CompiledCircuit, ProofData } from '@noir-lang/types';
 import { compile, PathToFileSourceMap } from '@noir-lang/noir_wasm';
-
 import { useAccount, useConnect, useContractWrite } from 'wagmi';
 import { contractCallConfig } from '../utils/wagmi.jsx';
 import { bytesToHex } from 'viem';
+import { ConnectKitButton } from 'connectkit';
 
 async function getCircuit(name: string) {
   const res = await fetch(new URL('../circuits/src/main.nr', import.meta.url));
@@ -126,13 +126,16 @@ function Component() {
   }, []);
 
   return (
-    <div className="container">
-      <h1 className="text-3xl font-bold underline">Example starter</h1>
+
+    <div className="p-4 flex justify-between">
+      <h1>zkCreditScore</h1>
+    <ConnectKitButton showBalance />
+      {/* <h1 className="text-3xl font-bold underline">Example starter</h1>
       <h2>This circuit checks that x and y are different</h2>
       <p>Try it!</p>
       <input name="x" type={'number'} onChange={handleChange} value={input.x} />
       <input name="y" type={'number'} onChange={handleChange} value={input.y} />
-      <button onClick={calculateProof}>Calculate proof</button>
+      <button onClick={calculateProof}>Calculate proof</button> */}
     </div>
   );
 }
