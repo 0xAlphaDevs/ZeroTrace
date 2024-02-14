@@ -1,0 +1,45 @@
+{
+  "customer_name": "David Wilson",
+  "customer_id": "456123789",
+  "credit_score": 600,
+  "credit_history": {
+    "payment_history": {
+      "on_time_payments": 15,
+      "late_payments": 12,
+      "missed_payments": 6
+    },
+    "credit_utilization": 0.45,
+    "length_of_credit_history": 3,
+    "credit_inquiries": 6
+  },
+  "accounts": [
+    {
+      "type": "credit_card",
+      "account_number": "7412589637412589",
+      "credit_limit": 5000,
+      "current_balance": 3500,
+      "payment_status": "late",
+      "last_payment_date": "2024-02-05"
+    },
+    {
+      "type": "student_loan",
+      "account_number": "9638527419638527",
+      "original_balance": 20000,
+      "current_balance": 18000,
+      "payment_status": "late",
+      "last_payment_date": "2024-02-10"
+    }
+  ],
+  "recent_credit_activity": [
+    {
+      "type": "credit_card",
+      "description": "Applied for a new credit card",
+      "date": "2023-12-20"
+    },
+    {
+      "type": "student_loan",
+      "description": "Took out a student loan",
+      "date": "2023-09-15"
+    }
+  ]
+}

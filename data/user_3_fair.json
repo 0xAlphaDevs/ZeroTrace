@@ -1,0 +1,45 @@
+{
+  "customer_name": "Emily Brown",
+  "customer_id": "369258147",
+  "credit_score": 650,
+  "credit_history": {
+    "payment_history": {
+      "on_time_payments": 20,
+      "late_payments": 8,
+      "missed_payments": 3
+    },
+    "credit_utilization": 0.35,
+    "length_of_credit_history": 4,
+    "credit_inquiries": 4
+  },
+  "accounts": [
+    {
+      "type": "credit_card",
+      "account_number": "3692581470369258",
+      "credit_limit": 8000,
+      "current_balance": 4000,
+      "payment_status": "current",
+      "last_payment_date": "2024-01-05"
+    },
+    {
+      "type": "personal_loan",
+      "account_number": "1472583691472583",
+      "original_balance": 10000,
+      "current_balance": 6000,
+      "payment_status": "current",
+      "last_payment_date": "2024-01-25"
+    }
+  ],
+  "recent_credit_activity": [
+    {
+      "type": "credit_card",
+      "description": "Increased credit limit on existing credit card",
+      "date": "2023-10-10"
+    },
+    {
+      "type": "personal_loan",
+      "description": "Took out a personal loan",
+      "date": "2023-08-15"
+    }
+  ]
+}
