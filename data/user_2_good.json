@@ -1,0 +1,45 @@
+{
+  "customer_name": "Michael Johnson",
+  "customer_id": "246813579",
+  "credit_score": 700,
+  "credit_history": {
+    "payment_history": {
+      "on_time_payments": 30,
+      "late_payments": 4,
+      "missed_payments": 1
+    },
+    "credit_utilization": 0.25,
+    "length_of_credit_history": 6,
+    "credit_inquiries": 2
+  },
+  "accounts": [
+    {
+      "type": "credit_card",
+      "account_number": "1357924680246813",
+      "credit_limit": 12000,
+      "current_balance": 2000,
+      "payment_status": "current",
+      "last_payment_date": "2024-01-10"
+    },
+    {
+      "type": "car_loan",
+      "account_number": "9876543219876543",
+      "original_balance": 25000,
+      "current_balance": 15000,
+      "payment_status": "current",
+      "last_payment_date": "2024-01-20"
+    }
+  ],
+  "recent_credit_activity": [
+    {
+      "type": "credit_card",
+      "description": "Applied for a new credit card",
+      "date": "2023-11-05"
+    },
+    {
+      "type": "car_loan",
+      "description": "Purchased a new car",
+      "date": "2023-09-20"
+    }
+  ]
+}

@@ -5,12 +5,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import Component from './components/index';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ConnectKitProvider} from 'connectkit';
+import { ConnectKitProvider } from 'connectkit';
 import initNoirWasm from '@noir-lang/noir_wasm';
 import initNoirC from '@noir-lang/noirc_abi';
 import initACVM from '@noir-lang/acvm_js';
 import { WagmiConfig } from 'wagmi';
 import { config } from './utils/wagmi';
+import Test from './components/test';
 
 const InitWasm = ({ children }) => {
   const [init, setInit] = React.useState(false);
@@ -38,14 +39,11 @@ export function Web3Provider({ children }: { children: React.ReactNode }) {
   // React.useEffect(() => setMounted(true), []);
   return (
     <WagmiConfig config={config}>
-    <QueryClientProvider client={queryClient}>
-    <ConnectKitProvider debugMode>
-    {children}
-    </ConnectKitProvider>
-    </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <ConnectKitProvider debugMode>{children}</ConnectKitProvider>
+      </QueryClientProvider>
     </WagmiConfig>
-    
-    );
+  );
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -53,6 +51,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <InitWasm>
       <Component />
       {/* <ToastContainer /> */}
+      <Test />
     </InitWasm>
   </Web3Provider>,
 );
