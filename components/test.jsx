@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import crypto from 'crypto-browserify';
 import { publicKeyInPemFormat } from '../data/public_key.json';
 import { privateKeyInPemFormat } from '../data/private_key.json';
-import userData from '../data/user_2_good.json';
-import userDataSigned from '../data/user_2_good_signed.json';
+import userDataSigned from '../data/user_5_very_poor_signed.json';
 
 function SignAndVerify() {
   const [isValidSignature, setIsValidSignature] = useState(false);
@@ -33,14 +32,10 @@ function SignAndVerify() {
 
     console.log(signature);
 
-    // console.log(signature);
-
     // Verify the signature with the public key
     const verifier = crypto.createVerify('RSA-SHA256');
     verifier.update(hashDigest);
     const isValid = verifier.verify(publicKey, userDataSigned.signature, 'base64');
-
-    console.log(isValid);
 
     setIsValidSignature(isValid);
   }, []);

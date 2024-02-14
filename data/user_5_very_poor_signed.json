@@ -1,0 +1,48 @@
+{
+  "data": {
+    "customer_name": "Sarah Anderson",
+    "customer_id": "654987321",
+    "credit_score": 550,
+    "credit_history": {
+      "payment_history": {
+        "on_time_payments": 10,
+        "late_payments": 18,
+        "missed_payments": 12
+      },
+      "credit_utilization": 0.55,
+      "length_of_credit_history": 2,
+      "credit_inquiries": 8
+    },
+    "accounts": [
+      {
+        "type": "credit_card",
+        "account_number": "9874563219874563",
+        "credit_limit": 3000,
+        "current_balance": 2900,
+        "payment_status": "missed",
+        "last_payment_date": "2024-02-10"
+      },
+      {
+        "type": "personal_loan",
+        "account_number": "8529637418529637",
+        "original_balance": 15000,
+        "current_balance": 14000,
+        "payment_status": "missed",
+        "last_payment_date": "2024-02-12"
+      }
+    ],
+    "recent_credit_activity": [
+      {
+        "type": "credit_card",
+        "description": "Applied for a new credit card",
+        "date": "2023-11-25"
+      },
+      {
+        "type": "personal_loan",
+        "description": "Took out a personal loan",
+        "date": "2023-10-15"
+      }
+    ]
+  },
+  "signature": "d/cWedNxQGI2CyWyTK7PlbZkYOXtzLF3QhSZE2bdbZ29Iblzqnc1YuWJwo9G5MhVomVCrxU3IaTngrQl9akyWj/uBv6Hjpm0wRHarJ/x+SMrUwTbdC8miU37jbKrGofel++o0LwmUDUa8zHjcCuRsZeZZ5N/qyohdkHx8CzMTJS5hNQHbgs1fSwJJR1zspZew0UI8641UrMzndgaWCYpdwGMG4Cj64/dfKlosaovhpl17H+/v/d6o4WWeNVqAlWx0F0JJj91xumjrcbLpJ/SDbrnyFPtjeZwALcKWmJBaJBG9Oj/cx8fluKEQ9kiOwzsMlH1rH2huDsa7CAs5Bj/Yg=="
+}

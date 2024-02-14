@@ -1,0 +1,48 @@
+{
+  "data": {
+    "customer_name": "John Doe",
+    "customer_id": "123456789",
+    "credit_score": 750,
+    "credit_history": {
+      "payment_history": {
+        "on_time_payments": 24,
+        "late_payments": 2,
+        "missed_payments": 0
+      },
+      "credit_utilization": 0.3,
+      "length_of_credit_history": 5,
+      "credit_inquiries": 3
+    },
+    "accounts": [
+      {
+        "type": "credit_card",
+        "account_number": "1234567890123456",
+        "credit_limit": 10000,
+        "current_balance": 3000,
+        "payment_status": "current",
+        "last_payment_date": "2023-12-15"
+      },
+      {
+        "type": "loan",
+        "account_number": "9876543210987654",
+        "original_balance": 20000,
+        "current_balance": 5000,
+        "payment_status": "current",
+        "last_payment_date": "2023-12-20"
+      }
+    ],
+    "recent_credit_activity": [
+      {
+        "type": "credit_card",
+        "description": "Opened a new credit card account",
+        "date": "2023-11-01"
+      },
+      {
+        "type": "loan",
+        "description": "Took out a personal loan",
+        "date": "2023-09-10"
+      }
+    ]
+  },
+  "signature": "0ZqtyJbCcTJcSvEJ24JQrTRuW9Zl5taiAAwFJ4mkdTBN/7+tItOXOjF+NbiaO9NQF+Mtea3lobSFHgmr9JaYMhF0yXJV/X/eLSTSdRZoSsVZTtASeTrCMHssDzmDNMoUoGGePxMXo18733NpOXfSY6bNHhvehSHQdLpmjzKvpU1zmjhAUtfBj1EldMiSf4beSVqbNDDJscCMJFkpkqqfkyCXXem+zdsfKy54j/Rpa+i+Ky9MLuu4Ur2maZGwAKkxqeB/hpWoNAXocmOofuf/z4SSjYXL2iaThaWX86ZyCORG27R77xucrGGtIOAqYImo75Bx76B0BqyXnnXaLfsMig=="
+}
