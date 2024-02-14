@@ -20,7 +20,6 @@ import { bytesToHex } from 'viem';
 import { ConnectKitButton } from 'connectkit';
 import Qr from './qr.jsx';
 
-
 async function getCircuit(name: string) {
   const res = await fetch(new URL('../circuits/src/main.nr', import.meta.url));
   const noirSource = await res.text();

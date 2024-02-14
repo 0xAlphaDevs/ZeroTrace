@@ -34,7 +34,7 @@ export const uploadQRpng = (
 
                 ctx.drawImage(image, 0, 0);
                 const imageData = ctx.getImageData(0, 0, image.width, image.height);
-
+                //@ts-ignore
                 const qrValue = jsQR(imageData.data, image.width, image.height);
 
                 if (qrValue != null) {

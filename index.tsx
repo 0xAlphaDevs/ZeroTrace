@@ -11,7 +11,6 @@ import initNoirC from '@noir-lang/noirc_abi';
 import initACVM from '@noir-lang/acvm_js';
 import { WagmiConfig } from 'wagmi';
 import { config } from './utils/wagmi';
-import Test from './components/test';
 
 const InitWasm = ({ children }) => {
   const [init, setInit] = React.useState(false);
@@ -50,8 +49,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <Web3Provider>
     <InitWasm>
       <Component />
-      {/* <ToastContainer /> */}
-      <Test />
+      <ToastContainer />
     </InitWasm>
   </Web3Provider>,
 );
