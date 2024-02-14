@@ -9,7 +9,6 @@ import {
 
 import { toast } from 'react-toastify';
 import React from 'react';
-
 import { Noir } from '@noir-lang/noir_js';
 import { BarretenbergBackend, flattenPublicInputs } from '@noir-lang/backend_barretenberg';
 import { CompiledCircuit, ProofData } from '@noir-lang/types';
@@ -19,6 +18,7 @@ import { contractCallConfig } from '../utils/wagmi.jsx';
 import { bytesToHex } from 'viem';
 import { ConnectKitButton } from 'connectkit';
 import Qr from './qr.jsx';
+
 
 async function getCircuit(name: string) {
   const res = await fetch(new URL('../circuits/src/main.nr', import.meta.url));
@@ -139,6 +139,7 @@ function Component() {
       <button onClick={calculateProof}>Calculate proof</button> */}
       </div>
       <Qr />
+
     </>
   );
 }
