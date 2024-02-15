@@ -81,10 +81,33 @@ export default function Qr() {
             showCreditReportDialog ? (
               <DialogHeader>
                 <DialogTitle>Your Credit Report</DialogTitle>
-                <div >
-                  <p>{qrData.data.customer_name}</p>
-                  <p>{qrData.data.customer_id}</p>
-                  <p>{qrData.signature}</p>
+                <div className='p-2'>
+                  <div className='flex justify-between'>
+                    <p>{qrData.data.customer_name}</p>
+                    <p>{qrData.data.customer_id}</p>
+                  </div>
+                  <div>
+                    Credit Score:  {qrData.data.credit_score}
+                  </div>
+                  <div>
+                    <p>Your Credit Activity</p>
+                    <div>
+                      Accounts
+                      {qrData.data.accounts.account_number}
+                    </div>
+                  </div>
+                  <div>
+                    <p>Key Factors</p>
+                    <div>
+                      Credit Utilization: {qrData.data.credit_history.credit_utilization}
+                    </div>
+                    <div>
+                      Credit Age: {qrData.data.credit_history.length_of_credit_history}
+                    </div>
+                    <div>
+                      On-time Payments: {qrData.data.credit_history.payment_history.on_time_payments}
+                    </div>
+                  </div>
                 </div>
                 <div className='absolute bottom-10 right-40'>
                   <Button onClick={handleGenerateProof}>Generate Credit Proof</Button>
