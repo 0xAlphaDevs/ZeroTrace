@@ -39,7 +39,7 @@ export function Web3Provider({ children }: { children: React.ReactNode }) {
   return (
     <WagmiConfig config={config}>
       <QueryClientProvider client={queryClient}>
-        <ConnectKitProvider debugMode>{children}</ConnectKitProvider>
+        <ConnectKitProvider debugMode theme='rounded'>{children}</ConnectKitProvider>
       </QueryClientProvider>
     </WagmiConfig>
   );

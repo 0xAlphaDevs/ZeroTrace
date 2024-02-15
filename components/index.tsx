@@ -146,7 +146,10 @@ function Component() {
   return (
     <>
       <div className="p-4 flex justify-between">
-        <h1>zkCreditScore</h1>
+        <div className='flex gap-2 items-center'>
+          <img src="./public/logo.svg" className='h-10 w-10' />
+          <h1 className='font-bold'>zkCreditScore</h1>
+        </div>
         <ConnectKitButton showBalance />
         {/* <h1 className="text-3xl font-bold underline">Example starter</h1>
       <h2>This circuit checks that x and y are different</h2>

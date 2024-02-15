@@ -18,13 +18,14 @@ export default function Qr() {
   const [qrData, setQrData] = useState<any>(null);
   const [isValidSignature, setIsValidSignature] = useState(false);
   const [showCreditReportDialog, setShowCreditReportDialog] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
 
   useEffect(() => {
     // remove signature from userDataSigned
     console.log(qrData);
     if (!qrData) return;
     const testData = JSON.stringify(qrData.data);
-
 
 
     const publicKey = publicKeyInPemFormat; // Replace with your public key
@@ -49,45 +50,66 @@ export default function Qr() {
     setShowCreditReportDialog(true);
   };
 
+  const handleReset = () => {
+    // Reset states when the dialog is closed
+    setQrData(null);
+    setIsValidSignature(false);
+    setShowCreditReportDialog(false);
+    setIsLoading(false)
+  };
+
+  const handleGenerateProof = async () => {
+    setIsLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 2000));
+  };
+
   return (
     <div className='p-8'>
-      <Dialog>
-        <DialogTrigger>
+      <Dialog >
+        <DialogTrigger onClick={handleReset}>
           <Button>Upload Qr</Button>
         </DialogTrigger>
-        <DialogContent>
-          {showCreditReportDialog ? (
+        <DialogContent >
+          {isLoading ? (
             <DialogHeader>
-              <DialogTitle>Your Credit Report</DialogTitle>
-              <DialogDescription>
-                {/* Display your QR data here */}
-                <p>{qrData.data.customer_name}</p>
-              </DialogDescription>
-              <DialogFooter>
-                <Button>Generate Credit Proof</Button>
-              </DialogFooter>
+              <DialogContent>
+                <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-green-400"></div>
+                <p> Generating Proof...</p>
+              </DialogContent>
             </DialogHeader>
-          ) : (
-            <DialogHeader>
-              <DialogTitle>Upload your Credit secure QR Code:</DialogTitle>
-              <DialogDescription>
-                <FileInput
-                  onChange={async e => {
-                    const { qrValue } = await uploadQRpng(e);
-                    const qrData = JSON.parse(qrValue);
-                    setQrData(qrData);
-                  }}
-                />
-              </DialogDescription>
-              <DialogFooter>
-                <h1>Signature Verification</h1>
-                <p>The signature is {isValidSignature ? 'valid 🟢' : 'invalid ❌'}</p>
-                {isValidSignature && (
-                  <Button onClick={handleSeeCreditReport}>See your credit report</Button>
-                )}
-              </DialogFooter>
-            </DialogHeader>
-          )}
+          ) :
+            showCreditReportDialog ? (
+              //  when Generate Credit Proof button is clicked display a loader stating Generatong Proof instead of the Credit Report
+              <DialogHeader>
+                <DialogTitle>Your Credit Report</DialogTitle>
+                <DialogDescription>
+                  <p>{qrData.data.customer_name}</p>
+                </DialogDescription>
+                <DialogFooter>
+                  <Button onClick={handleGenerateProof}>Generate Credit Proof</Button>
+                </DialogFooter>
+              </DialogHeader>
+            ) : (
+              <DialogHeader>
+                <DialogTitle>Upload your Credit secure QR Code:</DialogTitle>
+                <DialogDescription>
+                  <FileInput
+                    onChange={async e => {
+                      const { qrValue } = await uploadQRpng(e);
+                      const qrData = JSON.parse(qrValue);
+                      setQrData(qrData);
+                    }}
+                  />
+                </DialogDescription>
+                <DialogFooter>
+                  <h1>Signature Verification</h1>
+                  <p>The signature is {isValidSignature ? 'valid 🟢' : 'invalid ❌'}</p>
+                  {isValidSignature && (
+                    <Button onClick={handleSeeCreditReport}>See your credit report</Button>
+                  )}
+                </DialogFooter>
+              </DialogHeader>
+            )}
         </DialogContent>
       </Dialog>
     </div>
