@@ -65,34 +65,36 @@ export default function Qr() {
 
   return (
     <div className='p-8'>
-      <Dialog >
+      <Dialog  >
         <DialogTrigger onClick={handleReset}>
           <Button>Upload Qr</Button>
         </DialogTrigger>
         <DialogContent >
           {isLoading ? (
             <DialogHeader>
-              <DialogContent>
+              <div className='flex  flex-col items-center gap-2 absolute left-48 top-44'>
                 <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-green-400"></div>
                 <p> Generating Proof...</p>
-              </DialogContent>
+              </div>
             </DialogHeader>
           ) :
             showCreditReportDialog ? (
-              //  when Generate Credit Proof button is clicked display a loader stating Generatong Proof instead of the Credit Report
               <DialogHeader>
                 <DialogTitle>Your Credit Report</DialogTitle>
-                <DialogDescription>
+                <div >
                   <p>{qrData.data.customer_name}</p>
-                </DialogDescription>
-                <DialogFooter>
+                  <p>{qrData.data.customer_id}</p>
+                  <p>{qrData.signature}</p>
+                </div>
+                <div className='absolute bottom-10 right-40'>
                   <Button onClick={handleGenerateProof}>Generate Credit Proof</Button>
-                </DialogFooter>
+                </div>
               </DialogHeader>
             ) : (
-              <DialogHeader>
-                <DialogTitle>Upload your Credit secure QR Code:</DialogTitle>
-                <DialogDescription>
+              <DialogHeader >
+                <DialogTitle>Upload Credit QR</DialogTitle>
+                <DialogDescription>Upload your Credit secure QR Code to verify signature</DialogDescription>
+                <div className='absolute left-28 top-24 '>
                   <FileInput
                     onChange={async e => {
                       const { qrValue } = await uploadQRpng(e);
@@ -100,14 +102,17 @@ export default function Qr() {
                       setQrData(qrData);
                     }}
                   />
-                </DialogDescription>
-                <DialogFooter>
-                  <h1>Signature Verification</h1>
-                  <p>The signature is {isValidSignature ? 'valid 🟢' : 'invalid ❌'}</p>
-                  {isValidSignature && (
-                    <Button onClick={handleSeeCreditReport}>See your credit report</Button>
-                  )}
-                </DialogFooter>
+                </div>
+                <div className={`flex gap-1 absolute right-16 bottom-10 shadow-md p-4 rounded-lg ${isValidSignature ? 'bg-green-200 absolute right-16 bottom-10 ' : 'bg-red-200 '}`}>
+                  <h1>Signature Verification : </h1>
+                  <p> The signature is {isValidSignature ? 'valid ✅' : 'invalid ❌'}</p>
+
+                </div>
+                {isValidSignature && (
+                  <div className='absolute right-40 bottom-28'>
+                    <Button onClick={handleSeeCreditReport}>View your credit report</Button>
+                  </div>
+                )}
               </DialogHeader>
             )}
         </DialogContent>

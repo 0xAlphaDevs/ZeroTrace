@@ -159,7 +159,7 @@ function Component() {
       <button onClick={calculateProof}>Calculate proof</button> */}
       </div>
       {walletConnected ? (
-        <div className=' flex justify-center mx-auto'>
+        <div className='flex justify-center mx-auto mt-40'>
           <Card>
             <CardHeader>
               <CardTitle>Credit Score</CardTitle>
