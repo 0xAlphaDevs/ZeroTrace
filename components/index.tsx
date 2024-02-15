@@ -18,6 +18,14 @@ import { contractCallConfig } from '../utils/wagmi.jsx';
 import { bytesToHex } from 'viem';
 import { ConnectKitButton } from 'connectkit';
 import Qr from './qr.jsx';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from './ui/card.jsx';
 
 
 async function getCircuit(name: string) {
@@ -31,6 +39,7 @@ async function getCircuit(name: string) {
 }
 
 function Component() {
+  const [walletConnected, setWalletConnected] = useState(false);
   const [input, setInput] = useState({ x: 0, y: 0 });
   const [proof, setProof] = useState<ProofData>();
   const [noir, setNoir] = useState<Noir | null>(null);
@@ -126,6 +135,14 @@ function Component() {
     initNoir();
   }, []);
 
+  useEffect(() => {
+    if (isConnected) {
+      setWalletConnected(true);
+    } else {
+      setWalletConnected(false);
+    }
+  }, [isConnected]);
+
   return (
     <>
       <div className="p-4 flex justify-between">
@@ -138,7 +155,23 @@ function Component() {
       <input name="y" type={'number'} onChange={handleChange} value={input.y} />
       <button onClick={calculateProof}>Calculate proof</button> */}
       </div>
-      <Qr />
+      {walletConnected ? (
+        <div className=' flex justify-center mx-auto'>
+          <Card>
+            <CardHeader>
+              <CardTitle>Credit Score</CardTitle>
+              <CardDescription>Click the button below to upload Credit Qr</CardDescription>
+            </CardHeader>
+            <CardContent className='flex justify-center'>
+              <Qr />
+            </CardContent>
+          </Card>
+        </div>
+      ) : (
+        <div className="flex justify-center mt-48">
+          <h1 className="text-4xl font-bold">Welcome to zkCreditScore</h1>
+        </div>
+      )}
 
     </>
   );

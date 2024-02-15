@@ -4,6 +4,15 @@ import FileInput from './fileInput.jsx';
 import crypto from 'crypto-browserify';
 import { uploadQRpng } from './uploadPng.js';
 import { publicKeyInPemFormat } from '../data/public_key.json';
+import {
+  Dialog, DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from './ui/dialog.jsx';
+import { Button } from './ui/button.jsx';
 
 export default function Qr() {
   const [qrData, setQrData] = useState<any>(null);
@@ -34,24 +43,30 @@ export default function Qr() {
   }, [qrData]);
 
   return (
-    <div>
-      <div>
-        <div>
-          <label>Upload your Aadhaar secure QR Code: </label>
-          <FileInput
-            onChange={async e => {
-              const { qrValue } = await uploadQRpng(e);
-              const qrData = JSON.parse(qrValue);
-              setQrData(qrData);
-            }}
-          />
-        </div>
-      </div>
-
-      <div>
-        <h1>Signature Verification</h1>
-        <p>The signature is {isValidSignature ? 'valid 🟢' : 'invalid ❌'}</p>
-      </div>
+    <div className='p-8'>
+      <Dialog>
+        <DialogTrigger>
+          <Button>Upload Qr</Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Upload your Credit secure QR Code:</DialogTitle>
+            <DialogDescription>
+              <FileInput
+                onChange={async e => {
+                  const { qrValue } = await uploadQRpng(e);
+                  const qrData = JSON.parse(qrValue);
+                  setQrData(qrData);
+                }}
+              />
+            </DialogDescription>
+            <DialogFooter>
+              <h1>Signature Verification</h1>
+              <p>The signature is {isValidSignature ? 'valid 🟢' : 'invalid ❌'}</p>
+            </DialogFooter>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

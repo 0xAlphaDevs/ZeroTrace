@@ -49,7 +49,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <Web3Provider>
     <InitWasm>
       <Component />
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </InitWasm>
   </Web3Provider>,
 );
