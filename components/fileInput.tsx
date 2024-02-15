@@ -2,12 +2,11 @@ import React, { FunctionComponent, ChangeEvent, useState } from 'react'
 
 interface FileInputProps {
     onChange: (e: ChangeEvent<HTMLInputElement>) => void
-    //   id: string
 }
 
 export default function FileInput({
     onChange,
-    //   id,
+
 }: FileInputProps) {
     const [fileName, setFileName] = useState<string>('No file selected')
     return (
