@@ -33,6 +33,13 @@ export const uploadQRpng = (e: ChangeEvent<HTMLInputElement>): Promise<{ qrValue
 
                 //@ts-ignore
                 const qrValue = jsQR(imageData.data, image.width, image.height);
+                console.log(qrValue);
+                if (qrValue === null) {
+                  resolve({
+                    qrValue: 'no_qr_found',
+                  });
+                }
+
                 if (qrValue != null) {
                   // console.log('Result', JSON.parse(qrValue.data));
                   resolve({
@@ -42,6 +49,8 @@ export const uploadQRpng = (e: ChangeEvent<HTMLInputElement>): Promise<{ qrValue
               };
               image.src = e.target.result.toString();
             } catch (error) {
+              console.log('Error', error);
+
               console.error(error);
               reject(error);
             }

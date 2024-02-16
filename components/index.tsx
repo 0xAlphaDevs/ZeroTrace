@@ -27,7 +27,6 @@ import {
   CardTitle,
 } from './ui/card.jsx';
 
-
 async function getCircuit(name: string) {
   const res = await fetch(new URL('../circuits/src/main.nr', import.meta.url));
   const noirSource = await res.text();
@@ -146,9 +145,9 @@ function Component() {
   return (
     <>
       <div className="p-4 flex justify-between">
-        <div className='flex gap-2 items-center'>
-          <img src="/logo.svg" className='h-10 w-10' />
-          <h1 className='font-bold'>zkCreditScore</h1>
+        <div className="flex gap-2 items-center">
+          <img src="/logo.svg" className="h-10 w-10" />
+          <h1 className="font-bold">zkCreditScore</h1>
         </div>
         <ConnectKitButton showBalance />
         {/* <h1 className="text-3xl font-bold underline">Example starter</h1>
@@ -159,13 +158,15 @@ function Component() {
       <button onClick={calculateProof}>Calculate proof</button> */}
       </div>
       {walletConnected ? (
-        <div className='flex justify-center mx-auto mt-40'>
+        <div className="flex justify-center mx-auto mt-40">
           <Card>
             <CardHeader>
               <CardTitle>Credit Score</CardTitle>
-              <CardDescription>Click the button below to upload Credit Qr</CardDescription>
+              <CardDescription>
+                Click the button below to generate your credit score proof.
+              </CardDescription>
             </CardHeader>
-            <CardContent className='flex justify-center'>
+            <CardContent className="flex justify-center">
               <Qr />
             </CardContent>
           </Card>
@@ -175,7 +176,6 @@ function Component() {
           <h1 className="text-4xl font-bold">Welcome to zkCreditScore</h1>
         </div>
       )}
-
     </>
   );
 }
