@@ -39,7 +39,9 @@ export function Web3Provider({ children }: { children: React.ReactNode }) {
   return (
     <WagmiConfig config={config}>
       <QueryClientProvider client={queryClient}>
-        <ConnectKitProvider debugMode theme='rounded'>{children}</ConnectKitProvider>
+        <ConnectKitProvider debugMode theme="rounded">
+          {children}
+        </ConnectKitProvider>
       </QueryClientProvider>
     </WagmiConfig>
   );
@@ -49,7 +51,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <Web3Provider>
     <InitWasm>
       <Component />
-      {/* <ToastContainer /> */}
+      <ToastContainer />
     </InitWasm>
   </Web3Provider>,
 );

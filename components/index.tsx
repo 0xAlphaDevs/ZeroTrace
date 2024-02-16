@@ -130,9 +130,9 @@ function Component() {
     setNoir(noir);
   };
 
-  useEffect(() => {
-    initNoir();
-  }, []);
+  // useEffect(() => {
+  //   initNoir();
+  // }, []);
 
   useEffect(() => {
     if (isConnected) {
