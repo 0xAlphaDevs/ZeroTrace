@@ -138,8 +138,8 @@ const CreditReport = ({ qrData }: any) => {
                             </div>
                             <div className="flex flex-col">
                               <p className="font-bold text-lg">
-                                {account.current_balance} /
-                                {account.type.toLowerCase().includes('loan') ? account.original_balance : account.credit_limit}
+                                <span className='text-green-600'> $ {account.current_balance}</span>  /
+                                $ {account.type.toLowerCase().includes('loan') ? account.original_balance : account.credit_limit}
                               </p>
                               <p className="flex justify-center rounded-lg pb-1 text-white text-sm font-semibold bg-slate-700">{account.payment_status}</p>
                             </div>
@@ -168,7 +168,7 @@ const CreditReport = ({ qrData }: any) => {
                               <p className="text-sm font-thin"> {activity.description}</p>
                             </div>
                             <div className="flex flex-col">
-                              <p className="font-bold text-md">
+                              <p className="font-bold text-md bg-slate-700 rounded-lg px-2 text-white py-1">
                                 {activity.date}
                               </p>
 
