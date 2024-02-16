@@ -7,7 +7,6 @@ import { publicKeyInPemFormat } from '../data/public_key.json';
 import {
   Dialog, DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -126,11 +125,11 @@ export default function Qr() {
                     }}
                   />
                 </div>
-                <div className={`flex gap-1 absolute right-16 bottom-10 shadow-md p-4 rounded-lg ${isValidSignature ? 'bg-green-200 absolute right-16 bottom-10 ' : 'bg-red-200 '}`}>
-                  <h1>Signature Verification : </h1>
-                  <p> The signature is {isValidSignature ? 'valid ✅' : 'invalid ❌'}</p>
-
-                </div>
+                {qrData && (
+                  <div className={`flex gap-1 absolute right-16 bottom-10 shadow-md p-4 rounded-lg ${isValidSignature ? 'bg-green-200 absolute right-16 bottom-10 ' : 'bg-red-200 '}`}>
+                    <p> The signature is {isValidSignature ? 'valid ✅' : 'invalid ❌'}</p>
+                  </div>
+                )}
                 {isValidSignature && (
                   <div className='absolute right-40 bottom-28'>
                     <Button onClick={handleSeeCreditReport}>View your credit report</Button>
