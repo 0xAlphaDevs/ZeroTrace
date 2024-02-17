@@ -26,6 +26,7 @@ import {
   CardHeader,
   CardTitle,
 } from './ui/card.jsx';
+import Dashboard from './dashboard.jsx';
 
 function Component() {
   const [walletConnected, setWalletConnected] = useState(false);
@@ -58,7 +59,7 @@ function Component() {
       </div>
       {walletConnected ? (
         user.loggedIn ? (
-          <>Dashboard</>
+          <Dashboard />
         ) : (
           <div className="flex justify-center mx-auto mt-40">
             <Card>
