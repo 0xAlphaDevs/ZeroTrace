@@ -347,32 +347,32 @@ const CreditReport = ({ qrData, setRecheck }: any) => {
                           (
                             activity: {
                               type:
-                                | string
-                                | number
-                                | boolean
-                                | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-                                | Iterable<React.ReactNode>
-                                | React.ReactPortal
-                                | null
-                                | undefined;
+                              | string
+                              | number
+                              | boolean
+                              | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+                              | Iterable<React.ReactNode>
+                              | React.ReactPortal
+                              | null
+                              | undefined;
                               description:
-                                | string
-                                | number
-                                | boolean
-                                | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-                                | Iterable<React.ReactNode>
-                                | React.ReactPortal
-                                | null
-                                | undefined;
+                              | string
+                              | number
+                              | boolean
+                              | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+                              | Iterable<React.ReactNode>
+                              | React.ReactPortal
+                              | null
+                              | undefined;
                               date:
-                                | string
-                                | number
-                                | boolean
-                                | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-                                | Iterable<React.ReactNode>
-                                | React.ReactPortal
-                                | null
-                                | undefined;
+                              | string
+                              | number
+                              | boolean
+                              | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+                              | Iterable<React.ReactNode>
+                              | React.ReactPortal
+                              | null
+                              | undefined;
                             },
                             index: React.Key | null | undefined,
                           ) => (
@@ -415,8 +415,9 @@ const CreditReport = ({ qrData, setRecheck }: any) => {
             </code>
           </div>
 
-          <DialogClose>
-            <div className="flex justify-center mt-4">
+
+          <div className="flex justify-center mt-4">
+            <DialogClose>
               <Button
                 disabled={!noir}
                 onClick={() => {
@@ -425,8 +426,9 @@ const CreditReport = ({ qrData, setRecheck }: any) => {
               >
                 Verify Proof and Log In to Dashboard
               </Button>
-            </div>
-          </DialogClose>
+            </DialogClose>
+          </div>
+
 
           {/* <div className="flex justify-center mt-4">
             <Button disabled={!noir} onClick={() => verifyProof(proof as ProofData, true)}>
