@@ -26,7 +26,6 @@ import { compile, PathToFileSourceMap } from '@noir-lang/noir_wasm';
 import { useAccount, useConnect, useContractWrite } from 'wagmi';
 import { contractCallConfig } from '../utils/wagmi.jsx';
 import { bytesToHex } from 'viem';
-import { get } from 'http';
 
 async function getCircuit(name: string) {
   const res = await fetch(new URL('../circuits/src/main.nr', import.meta.url));
@@ -108,6 +107,19 @@ const CreditReport = ({ qrData }: any) => {
             publicInputs: proofData.publicInputs,
           });
           console.log('Proof verified: ', verification);
+          // convert map of hex strings i.e. proofData.publicInputs to readable strings
+
+          let category = '';
+          Array.from(proofData.publicInputs).forEach(function (value: any, key: any) {
+            const str = Buffer.from(value, 'hex').toString('utf8');
+            const alphaStr = str.replace(/[^a-zA-Z]/g, '');
+            category = category + alphaStr;
+          });
+
+          console.log('User Category is : ', category);
+
+          localStorage.setItem('user', JSON.stringify({ category: category, loggedIn: true }));
+
           // setProofVerified(verification);
           resolve(verification);
         }
@@ -407,15 +419,15 @@ const CreditReport = ({ qrData }: any) => {
 
           <div className="flex justify-center mt-4">
             <Button disabled={!noir} onClick={() => verifyProof(proof as ProofData, false)}>
-              Verify Proof Off Chain
+              Verify Proof and Log In to Dashboard
             </Button>
           </div>
 
-          <div className="flex justify-center mt-4">
+          {/* <div className="flex justify-center mt-4">
             <Button disabled={!noir} onClick={() => verifyProof(proof as ProofData, true)}>
               Verify Proof On Chain
             </Button>
-          </div>
+          </div> */}
         </div>
       )}
     </>

@@ -23,7 +23,10 @@ export default function Qr() {
 
   useEffect(() => {
     // remove signature from userDataSigned
-    if (!qrData) return;
+    if (!qrData || qrData == null) {
+      setIsValidSignature(false);
+      return;
+    }
     const testData = JSON.stringify(qrData.data);
 
     const publicKey = publicKeyInPemFormat; // Replace with your public key
@@ -86,7 +89,18 @@ export default function Qr() {
                       setQrData(null);
                       return;
                     } else {
+                      // console.log(qrValue);
+
                       const qrData = JSON.parse(qrValue);
+
+                      if (!qrData.signature) {
+                        alert('No signature found in QR code. Please Upload a valid QR code.');
+                        setQrData(null);
+                        return;
+                      }
+
+                      console.log(qrData);
+
                       // validate object schema
                       setQrData(qrData);
                     }
