@@ -15,7 +15,7 @@ import {
 import { Button } from './ui/button.jsx';
 import CreditReport from './creditReport.jsx';
 
-export default function Qr() {
+export default function Qr({ setRecheck }: any) {
   const [qrData, setQrData] = useState<any>(null);
   const [isValidSignature, setIsValidSignature] = useState(false);
   const [showCreditReportDialog, setShowCreditReportDialog] = useState(false);
@@ -72,7 +72,7 @@ export default function Qr() {
         </DialogTrigger>
         <DialogContent>
           {showCreditReportDialog ? (
-            <CreditReport qrData={qrData} />
+            <CreditReport qrData={qrData} setRecheck={setRecheck} />
           ) : (
             <DialogHeader>
               <DialogTitle>Upload Credit Report QR</DialogTitle>

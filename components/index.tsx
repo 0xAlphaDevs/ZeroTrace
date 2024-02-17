@@ -29,10 +29,13 @@ import {
 
 function Component() {
   const [walletConnected, setWalletConnected] = useState(false);
+  const [recheck, setRecheck] = useState(false);
   const [user, setUser] = useState<any>({ category: '', loggedIn: false });
   const { isConnected } = useAccount();
 
   useEffect(() => {
+    console.log('useEffect called');
+
     if (isConnected) {
       setWalletConnected(true);
       const user = localStorage.getItem('user');
@@ -42,7 +45,7 @@ function Component() {
     } else {
       setWalletConnected(false);
     }
-  }, [isConnected]);
+  }, [isConnected, recheck]);
 
   return (
     <>
@@ -66,7 +69,7 @@ function Component() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex justify-center">
-                <Qr />
+                <Qr setRecheck={setRecheck} />
               </CardContent>
             </Card>
           </div>

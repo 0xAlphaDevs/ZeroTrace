@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -46,7 +47,7 @@ function getCreditCategory(score: number): string {
   return '';
 }
 
-const CreditReport = ({ qrData }: any) => {
+const CreditReport = ({ qrData, setRecheck }: any) => {
   const [noir, setNoir] = useState<Noir | null>(null);
   const [backend, setBackend] = useState<BarretenbergBackend | null>(null);
   const [proofVerified, setProofVerified] = useState<boolean>(false);
@@ -125,6 +126,12 @@ const CreditReport = ({ qrData }: any) => {
         }
       });
 
+      verifyOffChain.then(res => {
+        if (res) {
+          setRecheck((prev: boolean) => !prev);
+        }
+      });
+
       toast.promise(verifyOffChain, {
         pending: 'Verifying proof off-chain...',
         success: 'Proof verified off-chain!',
@@ -138,15 +145,6 @@ const CreditReport = ({ qrData }: any) => {
       });
     }
   };
-
-  // useEffect(() => {
-  //   if (proof) {
-  //     verifyProof();
-  //     return () => {
-  //       backend!.destroy();
-  //     };
-  //   }
-  // }, [proof]);
 
   useEffect(() => {
     initNoir();
@@ -417,11 +415,18 @@ const CreditReport = ({ qrData }: any) => {
             </code>
           </div>
 
-          <div className="flex justify-center mt-4">
-            <Button disabled={!noir} onClick={() => verifyProof(proof as ProofData, false)}>
-              Verify Proof and Log In to Dashboard
-            </Button>
-          </div>
+          <DialogClose>
+            <div className="flex justify-center mt-4">
+              <Button
+                disabled={!noir}
+                onClick={() => {
+                  verifyProof(proof as ProofData, false);
+                }}
+              >
+                Verify Proof and Log In to Dashboard
+              </Button>
+            </div>
+          </DialogClose>
 
           {/* <div className="flex justify-center mt-4">
             <Button disabled={!noir} onClick={() => verifyProof(proof as ProofData, true)}>
