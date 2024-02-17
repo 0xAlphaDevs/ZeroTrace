@@ -1,5 +1,5 @@
 import { Separator } from '@radix-ui/react-separator';
-import { CreditCardIcon, HomeIcon, LineChartIcon, Link, ShoppingBagIcon, UsersIcon } from 'lucide-react';
+import { BanknoteIcon, CreditCardIcon, HomeIcon, LineChartIcon, Link, ShoppingBagIcon, UsersIcon } from 'lucide-react';
 import React from 'react';
 import { Button } from './ui/button.jsx';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './ui/card.jsx';
@@ -28,7 +28,7 @@ export default function Dashboard() {
                                     <span className={`text-4xl 
             ${category === 'good' || category === 'excellent' ? 'text-green-500' : ''}
             ${category === 'fair' ? 'text-yellow-500' : ''}
-            ${category === 'poor' || category === 'very poor' ? 'text-red-500' : ''}
+            ${category === 'poor' || category === 'verypoor' ? 'text-red-500' : ''}
         `}>
                                         {""} {category}
                                     </span>
@@ -38,7 +38,7 @@ export default function Dashboard() {
                                         "You're in the top tier of borrowers. You're likely to get the best rates and terms." :
                                         category === 'fair' ?
                                             "You're in the mid-range of borrowers. You might get decent rates, but they may not be the best." :
-                                            category === 'poor' || category === 'very poor' ?
+                                            category === 'poor' || category === 'verypoor' ?
                                                 "You're in the lower tier of borrowers. You may face difficulty in getting credit and might receive higher interest rates." :
                                                 "Your credit category is not recognized."}
                                 </p>
@@ -56,16 +56,14 @@ export default function Dashboard() {
                                         'The credit score range is 750-850. The higher the score, the better.' :
                                         category === 'fair' ?
                                             'The credit score range is 600-749. A good score can make it easier to qualify for loans and better interest rates.' :
-                                            category === 'poor' || category === 'very poor' ?
+                                            category === 'poor' || category === 'verypoor' ?
                                                 'The credit score range is 300-599. A low score may indicate credit risk and may make it difficult to qualify for loans or obtain favorable interest rates.' :
                                                 'Unknown'}
                                 </p>
                             </div>
 
                             <div className="w-[200px]">
-                                <div className="grid w-full aspect-[4/1] rounded-xl overflow-hidden">
-                                    <div className="grid w-full aspect-[1/4] bg-gray-200 shad-gradient-diagonal-to-t from-gray-300 to-gray-400" />
-                                </div>
+                                <BanknoteIcon />
                             </div>
                         </CardContent>
                     </Card>
