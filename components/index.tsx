@@ -75,8 +75,15 @@ function Component() {
           </div>
         )
       ) : (
-        <div className='mt-8 w-full'>
-          <div className='flex justify-center w-full'> <img src='/intro.png' className='w-[60%] rounded-lg shadow-lg' /></div>
+        <div className="mt-40 w-full flex flex-col items-center justify-center">
+          <div className="text-center text-4xl font-bold">Welcome to zkCreditScore</div>
+          <div className="text-center text-xl font-bold">
+            A privacy-preserving credit score system
+          </div>
+          {/* <div className="flex justify-center w-full">
+            {' '}
+            <img src="/intro.png" className="w-[60%] rounded-lg shadow-lg" />
+          </div> */}
         </div>
       )}
     </>
