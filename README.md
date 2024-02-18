@@ -1,17 +1,25 @@
-# Noir with Vite and Hardhat
+# zkCreditScore
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e4bd1ebc-6be1-4ed2-8be8-18f70382ae22/deploy-status)](https://app.netlify.com/sites/noir-vite-hardhat/deploys)
+Prove your credit worthiness using zk proofs
 
-This example uses [Vite](https://vite.dev/) as the frontend framework, and
-[Hardhat](https://hardhat.org/) to deploy and test.
+## Links
 
-## Getting Started
+- [Deployed URL]()
+- [Git Repo with README]()
 
-Want to get started in a pinch? Start your project in a free Github Codespace!
+## Protocol Specs
 
-[![Start your project in a free Github Codespace!](https://github.com/codespaces/badge.svg)](https://codespaces.new/noir-lang/noir-starter/tree/main)
+- Noir for writing down Snarks based zk proof generation
+- jsqr for reading the qr data
+-
 
-In the meantime, follow these simple steps to work on your own machine:
+## System Architecture
+
+![image](./public/system-design-1.png) ![image](./public/3.png) ![image](./public/4.png)
+
+## Instructions to setup
+
+Follow these simple steps to work on your own machine:
 
 1. Install [yarn](https://yarnpkg.com/) (tested on yarn v1.22.19)
 
@@ -34,6 +42,27 @@ In the meantime, follow these simple steps to work on your own machine:
    ```bash
    yarn
    ```
+
+## App Demo
+
+![image](./public/ad1.jpeg) ![image](./public/ad2.jpeg) ![image](./public/ad3.jpeg)
+![image](./public/ad4.jpeg) ![image](./public/ad5.jpeg) ![image](./public/ad6.jpeg)
+![image](./public/ad7.jpeg)
+
+## Tech Stack
+
+- Vite
+- Hardhat
+- Noir
+- Typescript
+- jsqr
+- Tailwind CSS
+- Radix UI
+- Connectkit
+- wagmi
+- view
+- react-toastify
+- crypto-browserify
 
 ## Generate verifier contract
 
@@ -97,7 +126,8 @@ The test demonstrates basic usage of Noir in a TypeScript Node.js environment.
    > **Note:** If the deployment fails, try removing `yarn.lock` and reinstalling dependencies with
    > `yarn`.
 
-4. Once your contracts are deployed and the build is finished, you can preview the built website with
+4. Once your contracts are deployed and the build is finished, you can preview the built website
+   with
 
    ```bash
    yarn preview
@@ -115,5 +145,3 @@ Make sure you:
 - Update the deployer private keys in `vite-hardhat/.env`
 - Have funds in the deployer account
 - Add keys for alchemy (to act as a node) in `vite-hardhat/.env`
-
-Feel free to contribute with other networks in `hardhat.config.ts`
