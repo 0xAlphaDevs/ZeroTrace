@@ -51,9 +51,10 @@ Follow these simple steps to run this project on your own machine:
 
 ## App Demo Screenshots
 
-![image](./public/ad1.jpeg) ![image](./public/ad2.jpeg) ![image](./public/ad3.jpeg)
-![image](./public/ad4.jpeg) ![image](./public/ad5.jpeg) ![image](./public/ad6.jpeg)
-![image](./public/ad7.jpeg)
+![image](./public/screenshots/qr_verification.jpeg)
+![image](./public/screenshots/view_credit_report.jpeg)
+![image](./public/screenshots/zk_snark_proof.jpeg)
+![image](./public/screenshots/finance_dashboard.jpeg)
 
 ## Tech Stack
 
