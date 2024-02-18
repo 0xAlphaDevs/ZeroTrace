@@ -2,7 +2,7 @@
 
 Prove your credit worthiness using zk proofs.
 
-[Deployed App]()
+[![Deployed App](https://img.shields.io/badge/Deployed%20App-Violet?style=for-the-badge&logo=website&color=violet)](https://zk-credit-score-u7uj.vercel.app/)
 
 ## Usage Instructions
 
@@ -70,4 +70,18 @@ Follow these simple steps to run this project on your own machine:
 - react-toastify
 - crypto-browserify
 
-## Team Members
+## Team
+
+Team [AlphaDevs](https://alphadevs.dev) 👇
+
+### Github
+
+[Harsh Tyagi](https://github.com/mr-harshtyagi) [Yashasvi Chaudhary](https://github.com/0xyshv)
+
+### Twitter / X
+
+[Harsh Tyagi](https://twitter.com/mr_harshtyagi) [Yashasvi Chaudhary](https://twitter.com/0xyshv)
+
+## Thanks
+
+Feel free to reach out to the [AlphaDevs team](https://alphadevs.dev) with any questions or issues.
