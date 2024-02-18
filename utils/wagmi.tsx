@@ -4,7 +4,7 @@ import { publicProvider } from 'wagmi/providers/public';
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask';
 import abi from './verifierAbi.json';
 import addresses from './addresses.json';
-import {  getDefaultConfig } from 'connectkit';
+import { getDefaultConfig } from 'connectkit';
 
 // const { chains, publicClient, webSocketPublicClient } = configureChains(
 //   [localhost, polygonMumbai, sepolia],
@@ -14,15 +14,9 @@ import {  getDefaultConfig } from 'connectkit';
 export const config = createConfig(
   getDefaultConfig({
     appName: 'zkCreditScore',
-    walletConnectProjectId: "2c47228d7859d86f61278d79d5df9723",
-    chains: [hardhat, polygonMumbai, sepolia]
+    walletConnectProjectId: '2c47228d7859d86f61278d79d5df9723',
+    chains: [sepolia],
   }),
-//   {
-//   autoConnect: false,
-//   connectors: [new MetaMaskConnector({ chains })],
-//   publicClient,
-//   webSocketPublicClient,
-// }
 );
 
 export const contractCallConfig = {
