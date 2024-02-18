@@ -6,7 +6,7 @@ Prove your credit worthiness using zk proofs.
 
 ## Usage Instructions
 
-- Go to the deployed [URL]()
+- Go to the deployed [URL](https://zk-credit-score.vercel.app/)
 - Get a sample QR code from the following user types:
   - [Excellent Credit Score](./data//user_1_qr.png)
   - [Good Credit Score User](./data/user_2_qr.png)
