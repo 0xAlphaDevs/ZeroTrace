@@ -19,10 +19,10 @@ export default function Dashboard() {
 
   return (
     <div className="p-4">
-      <p className="text-center font-bold text-4xl">Finance Dashboard</p>
-      <main className="flex-1 flex flex-col gap-4 p-4 md:gap-8 md:p-6">
-        <div className="grid gap-4 py-4">
-          <div className="flex items-center gap-4">
+      <p className="text-center font-bold text-4xl text-slate-700">Finance Dashboard</p>
+      <main className="flex-1 flex flex-col md:gap-8 md:p-6">
+        <div className="grid gap-4 ">
+          <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
               <CreditCardIcon className="h-6 w-6" />
               <h2 className="font-semibold text-lg">Credit Score</h2>
@@ -48,10 +48,10 @@ export default function Dashboard() {
                   {category === 'good' || category === 'excellent'
                     ? "You're in the top tier of borrowers. You're likely to get the best rates and terms."
                     : category === 'fair'
-                    ? "You're in the mid-range of borrowers. You might get decent rates, but they may not be the best."
-                    : category === 'poor' || category === 'verypoor'
-                    ? "You're in the lower tier of borrowers. You may face difficulty in getting credit and might receive higher interest rates."
-                    : 'Your credit category is not recognized.'}
+                      ? "You're in the mid-range of borrowers. You might get decent rates, but they may not be the best."
+                      : category === 'poor' || category === 'verypoor'
+                        ? "You're in the lower tier of borrowers. You may face difficulty in getting credit and might receive higher interest rates."
+                        : 'Your credit category is not recognized.'}
                 </p>
               </div>
 
@@ -60,19 +60,19 @@ export default function Dashboard() {
                   {category === 'good' || category === 'excellent'
                     ? '750-850'
                     : category === 'fair'
-                    ? '600-749'
-                    : category === 'poor' || category === 'very poor'
-                    ? '300-599'
-                    : 'Unknown'}
+                      ? '600-749'
+                      : category === 'poor' || category === 'very poor'
+                        ? '300-599'
+                        : 'Unknown'}
                 </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
                   {category === 'good' || category === 'excellent'
                     ? 'The credit score range is 750-850. The higher the score, the better.'
                     : category === 'fair'
-                    ? 'The credit score range is 600-749. A good score can make it easier to qualify for loans and better interest rates.'
-                    : category === 'poor' || category === 'verypoor'
-                    ? 'The credit score range is 300-599. A low score may indicate credit risk and may make it difficult to qualify for loans or obtain favorable interest rates.'
-                    : 'Unknown'}
+                      ? 'The credit score range is 600-749. A good score can make it easier to qualify for loans and better interest rates.'
+                      : category === 'poor' || category === 'verypoor'
+                        ? 'The credit score range is 300-599. A low score may indicate credit risk and may make it difficult to qualify for loans or obtain favorable interest rates.'
+                        : 'Unknown'}
                 </p>
               </div>
 
@@ -82,7 +82,7 @@ export default function Dashboard() {
             </CardContent>
           </Card>
         </div>
-        <div className="grid gap-8 pb-4">
+        <div className="grid gap-4 pb-4">
           <div className="flex items-center gap-2">
             <ShoppingBagIcon className="h-6 w-6" />
             <h2 className="font-semibold text-lg">Financial Products</h2>
@@ -143,7 +143,7 @@ export default function Dashboard() {
           </Card>
         </div>
       </main>
-      <footer className="flex items-center h-14 border-t gap-4 px-8 dark:border-gray-800 ">
+      {/* <footer className="flex items-center h-14 border-t gap-4 px-8 dark:border-gray-800 ">
         <div className="flex items-center gap-2 text-sm font-medium shrink-0">
           <HomeIcon className="h-4 w-4" />
           Home
@@ -160,7 +160,7 @@ export default function Dashboard() {
           <LineChartIcon className="h-4 w-4" />
           Analytics
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }

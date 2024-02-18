@@ -6,7 +6,6 @@ import {
   FormEvent,
   ChangeEvent,
 } from 'react';
-
 import { toast } from 'react-toastify';
 import React from 'react';
 import { Noir } from '@noir-lang/noir_js';
@@ -50,7 +49,7 @@ function Component() {
 
   return (
     <>
-      <div className="p-4 flex justify-between">
+      <div className="p-4 flex justify-between bg-slate-50 rounded-lg my-2 mx-10 shadow-lg">
         <div className="flex gap-2 items-center">
           <img src="/logo.svg" className="h-10 w-10" />
           <h1 className="font-bold">zkCreditScore</h1>
@@ -76,8 +75,8 @@ function Component() {
           </div>
         )
       ) : (
-        <div className="flex justify-center mt-48">
-          <h1 className="text-4xl font-bold">Welcome to zkCreditScore</h1>
+        <div className='mt-8 w-full'>
+          <div className='flex justify-center w-full'> <img src='/intro.png' className='w-[60%] rounded-lg shadow-lg' /></div>
         </div>
       )}
     </>

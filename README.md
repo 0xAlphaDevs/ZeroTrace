@@ -2,7 +2,7 @@
 
 Prove your credit worthiness using zk proofs.
 
-[![Deployed App](https://img.shields.io/badge/Deployed%20App-Violet?style=for-the-badge&logo=website&color=violet)](https://zk-credit-score-u7uj.vercel.app/)
+[![Deployed App](https://img.shields.io/badge/Deployed%20App-Violet?style=for-the-badge&logo=website&color=violet)](https://zk-credit-score.vercel.app/)
 
 ## Usage Instructions
 
