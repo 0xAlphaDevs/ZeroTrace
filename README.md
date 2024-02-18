@@ -1,25 +1,31 @@
 # zkCreditScore
 
-Prove your credit worthiness using zk proofs
+Prove your credit worthiness using zk proofs.
 
-## Links
+[Deployed App]()
 
-- [Deployed URL]()
-- [Git Repo with README]()
+## Usage Instructions
 
-## Protocol Specs
-
-- Noir for writing down Snarks based zk proof generation
-- jsqr for reading the qr data
--
+- Go to the deployed [URL]()
+- Get a sample QR code from the following user types:
+  - [Excellent Credit Score](./data//user_1_qr.png)
+  - [Good Credit Score User](./data/user_2_qr.png)
+  - [Fair Credit Score User](./data/user_3_qr.png)
+  - [Poor Credit Score User](./data/user_4_qr.png)
+  - [Very Poor Credit Score User](./data/user_5_qr.png)
+  - [Tampered QR Code](./data//user_1_qr_tampered.png) (to check digital signature verification
+    failure)
+- Click on Login and Upload QR to view the credit history and recent transactions along with user's
+  credit score.
+- Generate credit score proof and click on "Verify and Log in" to enter finance dashboard.
 
 ## System Architecture
 
-![image](./public/assets/2.png) ![image](./public/assets/3.png) ![image](./public/assets4.png)
+![image](./public/assets/2.png) ![image](./public/assets/3.png) ![image](./public/assets/4.png)
 
-## Instructions to setup
+## Instructions to setup locally
 
-Follow these simple steps to work on your own machine:
+Follow these simple steps to run this project on your own machine:
 
 1. Install [yarn](https://yarnpkg.com/) (tested on yarn v1.22.19)
 
@@ -43,7 +49,7 @@ Follow these simple steps to work on your own machine:
    yarn
    ```
 
-## App Demo
+## App Demo Screenshots
 
 ![image](./public/ad1.jpeg) ![image](./public/ad2.jpeg) ![image](./public/ad3.jpeg)
 ![image](./public/ad4.jpeg) ![image](./public/ad5.jpeg) ![image](./public/ad6.jpeg)
@@ -63,3 +69,5 @@ Follow these simple steps to work on your own machine:
 - view
 - react-toastify
 - crypto-browserify
+
+## Team Members
